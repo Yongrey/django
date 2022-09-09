@@ -3,8 +3,7 @@ from .models import Bottle
 # Create your views here.
 
 def contacts(request):
-    response = HttpResponse("тел.:0312363454")
-    return response
+   return render(request, 'contacts.html')
 
 def about(request):
     return render(request, 'about.html')
