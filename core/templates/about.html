@@ -3,4 +3,17 @@
 <div>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus beatae consectetur distinctio excepturi exercitationem facere, fugiat, harum illo incidunt inventore iure maxime minus mollitia natus, odit placeat quos repellat sed!
 </div>
+    <hr>
+    <h2>Оставьте отзыв</h2>
+    <form>
+        <input type="text">
+        <button type="button" class="btn btn-warning">Send</button>
+        <br>
+        {% if user.is_authenticated %}
+            <p><a href="{% url 'logout' %}">Выйти из аккаунта</a></p>
+        {% else %}
+            <p>Вы не вошли в систему</p>
+            <a href="{% url 'sign-in' %}">Войти</a>
+        {% endif %}
+    </form>
 {% endblock %}
